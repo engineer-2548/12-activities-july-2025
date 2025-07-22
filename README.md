@@ -1,0 +1,1 @@
+# 12-activities-july-2025
