@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 กิจกรรมน่าไป Bangkok Events | 19-25 ก.ค. 68</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: particle-float 20s infinite linear;
+        }
+        
+        @keyframes particle-float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .card-bg {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+        
+        .dark-mode .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 min-h-screen transition-all duration-500">
+    <!-- Particles Background -->
+    <div id="particles"></div>
+    
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="darkModeToggle" class="bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
+            <svg class="w-6 h-6 text-gray-800 dark:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path id="sunIcon" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                <path id="moonIcon" class="hidden" fill-rule="evenodd" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        <div class="text-center mb-12 slide-in">
+            <h1 class="text-4xl md:text-6xl font-bold gradient-text mb-4 floating">
+                12 กิจกรรมน่าไป
+            </h1>
+            <div class="inline-block">
+                <p class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    19 - 25 ก.ค. 68
+                </p>
+                <div class="h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full shimmer"></div>
+            </div>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
+                ชวนคนกรุงเทพฯ ออกมาใช้ชีวิตร่วมกันในพื้นที่สาธารณะ<br>
+                กับ 12 กิจกรรมทั่วกรุงเทพมหานคร
+            </p>
+        </div>
+        
+        <!-- Events Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Event 1 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.1s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        เสน่ห์สายน้ำ สืบสานวิถีชุมชน
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        20 ก.ค. เวลา 8:30 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        บ้านเรือนไทยริมคลองแสนแสบ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.2s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        เท่าหรือเทียม: เส้นทางความเหลื่อมล้ำ คนจนเมือง
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        15-27 ก.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        BACC
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 3 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.3s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        BOTLC Book Fair 2025
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        16 - 20 ก.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        ศูนย์การเรียนรู้แบงก์ชาติ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 4 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.4s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        4
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        BKK-เรนเจอร์ ชวนท่องจักรวาล
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        19-20 ก.ค. เวลา 15:00 - 20:00 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        มิวเซียมสยาม
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 5 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.5s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        5
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        Rangnam Localicious
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        19 - 27 ก.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        ลานแอโรบิค สวนสันติภาพ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 6 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.6s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        6
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        MADE BY LEGACY FLEA MARKET NO. 18
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        18 - 20 ก.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        SAMA Garden, BITEC
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 7 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.7s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-teal-500 to-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        7
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        Repair Café ครั้งที่ 6
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        19 ก.ค. เวลา 13:00 - 17:00 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        บ้านสวนสุดาวรรณ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 8 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.8s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        8
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        Moving Out
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        18 - 20 ก.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        verb อิสรภาพ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 9 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 0.9s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        9
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        RUN, MORNING and GROOVE
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        19 ก.ค. เวลา 6:30 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        BLOQyard
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 10 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 1.0s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        10
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        Race Singlet 001 with jazzashbrook
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        19 ก.ค. เวลา 6:30 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        สวนเบญจกิติ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 11 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 1.1s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        11
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        Bootylicious Birthday Booty Boost
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        20 ก.ค. เวลา 6:30 น.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        GRAND STAND สวนเบญจกิติ
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Event 12 -->
+            <div class="card-bg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 card-hover border border-gray-200 dark:border-gray-700 slide-in" style="animation-delay: 1.2s">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3 pulse-dot">
+                        12
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex-1">
+                        มหกรรมนิยายนานาชาติ 2025
+                    </h3>
+                </div>
+                <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        25 ก.ค. - 3 ส.ค.
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        สามย่านมิตรทาวน์ฮอลล์
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 md:p-12 shadow-xl text-white">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                ติดตามกิจกรรมอื่น ๆ ที่น่าสนใจเพิ่มเติม
+            </h2>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="https://visit.bangkok.go.th/th/festival-calendar" target="_blank" 
+                   class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 card-hover flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                    VisitBangkok
+                </a>
+                <a href="https://www.facebook.com/share/16n83zetFo/" target="_blank" 
+                   class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 card-hover flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Share on Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Particle Background
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = Math.random() * 10 + 5 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+            particle.style.borderRadius = '50%';
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 20000);
+        }
+        
+        // Create particles periodically
+        setInterval(createParticle, 500);
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            body.classList.add('dark-mode');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            if (isDarkMode) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+        
+        // Smooth scroll animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Add hover sound effect (optional)
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Add subtle hover effect
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add countdown timer for events
+        function updateCountdown() {
+            const eventDate = new Date('2025-07-19');
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                
+                // You can display this countdown somewhere if needed
+                console.log(`${days} days and ${hours} hours until events start!`);
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Update every minute
+    </script>
+</body>
+</html>
